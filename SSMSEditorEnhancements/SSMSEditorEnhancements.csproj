@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Commands\Navigation\EndOfWordExtend\EndOfWordExtendCommand.cs" />
     <Compile Include="Commands\Navigation\EndOfWord\EndOfWordCommand.cs" />
+    <Compile Include="Commands\Navigation\StartOfWord\StartOfWordCommand.cs" />
     <Compile Include="Commands\ReplaceSquareBracketsWithDoubleQuotes\ReplaceSquareBracketsWithDoubleQuotesCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\RemoveTrailingSpacesAndSaveDocument\RemoveTrailingSpacesAndSaveDocumentCommand.cs" />
@@ -205,6 +206,7 @@
   <ItemGroup>
     <Content Include="Commands\Navigation\EndOfWordExtend\Resources\EndOfWordExtendCommand.png" />
     <Content Include="Commands\Navigation\EndOfWord\Resources\EndOfWordCommand.png" />
+    <Content Include="Commands\Navigation\StartOfWord\Resources\StartOfWordCommand.png" />
     <Content Include="Commands\RemoveTrailingSpacesAndSaveDocument\Resources\RemoveTrailingSpacesAndSaveDocumentCommand.png" />
     <Content Include="Commands\ReplaceSquareBracketsWithDoubleQuotes\Resources\ReplaceSquareBracketsWithDoubleQuotesCommand.png" />
     <Content Include="Resources\Package.ico" />

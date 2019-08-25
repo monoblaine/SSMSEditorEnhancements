@@ -108,5 +108,50 @@ namespace SSMSEditorEnhancements {
                 operations.MoveToNextCharacter(extendSelection);
             }
         }
+
+        public static void StartOfWord (this EnvDTE80.DTE2 dte2, Boolean extendSelection) {
+            if (!dte2.TryGetTextView(out var vsTextView)) {
+                return;
+            }
+
+            var wpfTextView = vsTextView.GetWpfTextView();
+
+            if (!extendSelection && !wpfTextView.Selection.IsEmpty) {
+                wpfTextView.Selection.Select(wpfTextView.Selection.ActivePoint, wpfTextView.Selection.ActivePoint);
+            }
+
+            var caret = wpfTextView.Caret;
+            var operations = dte2.GetEditorOperations().GetEditorOperations(wpfTextView);
+
+            if (caret.InVirtualSpace) {
+                operations.MoveToEndOfLine(extendSelection);
+                return;
+            }
+
+            var point = caret.Position.BufferPosition;
+
+            if (point.Position == 0) {
+                return;
+            }
+
+            var navigator = dte2.GetTextStructureNavigatorSelector().GetTextStructureNavigator(wpfTextView.TextBuffer);
+
+            if (point == caret.ContainingTextViewLine.Start) {
+                operations.MoveLineUp(extendSelection);
+                operations.MoveToLastNonWhiteSpaceCharacter(extendSelection);
+
+                if (navigator.GetExtentOfWord(caret.Position.BufferPosition).IsSignificant) {
+                    operations.MoveToNextCharacter(extendSelection);
+                }
+
+                return;
+            }
+
+            var extent = navigator.GetExtentOfWord(point - 1);
+
+            for (Int32 i = point; i > extent.Span.Start; i--) {
+                operations.MoveToPreviousCharacter(extendSelection);
+            }
+        }
     }
 }

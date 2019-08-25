@@ -62,6 +62,7 @@ namespace SSMSEditorEnhancements {
             await Commands.ReplaceSquareBracketsWithDoubleQuotes.ReplaceSquareBracketsWithDoubleQuotesCommand.InitializeAsync(this);
             await Commands.Navigation.EndOfWord.EndOfWordCommand.InitializeAsync(this);
             await Commands.Navigation.EndOfWordExtend.EndOfWordExtendCommand.InitializeAsync(this);
+            await Commands.Navigation.StartOfWord.StartOfWordCommand.InitializeAsync(this);
         }
 
         #endregion
