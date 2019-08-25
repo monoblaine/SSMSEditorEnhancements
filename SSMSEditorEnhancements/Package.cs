@@ -63,6 +63,7 @@ namespace SSMSEditorEnhancements {
             await Commands.Navigation.EndOfWord.EndOfWordCommand.InitializeAsync(this);
             await Commands.Navigation.EndOfWordExtend.EndOfWordExtendCommand.InitializeAsync(this);
             await Commands.Navigation.StartOfWord.StartOfWordCommand.InitializeAsync(this);
+            await Commands.Navigation.StartOfWordExtend.StartOfWordExtendCommand.InitializeAsync(this);
         }
 
         #endregion

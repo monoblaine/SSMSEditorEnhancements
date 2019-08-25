@@ -87,6 +87,13 @@
           <ButtonText>Invoke StartOfWordCommand</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidPackageCmdSet" id="StartOfWordExtendCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidStartOfWordExtendCommandImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Invoke StartOfWordExtendCommand</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -101,6 +108,7 @@
       <Bitmap guid="guidEndOfWordCommandImages" href="Commands\Navigation\EndOfWord\Resources\EndOfWordCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidEndOfWordExtendCommandImages" href="Commands\Navigation\EndOfWordExtend\Resources\EndOfWordExtendCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidStartOfWordCommandImages" href="Commands\Navigation\StartOfWord\Resources\StartOfWordCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidStartOfWordExtendCommandImages" href="Commands\Navigation\StartOfWordExtend\Resources\StartOfWordExtendCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
     </Bitmaps>
   </Commands>
 
@@ -116,6 +124,7 @@
       <IDSymbol name="EndOfWordCommandId" value="4130" />
       <IDSymbol name="EndOfWordExtendCommandId" value="4131" />
       <IDSymbol name="StartOfWordCommandId" value="4132" />
+      <IDSymbol name="StartOfWordExtendCommandId" value="4133" />
     </GuidSymbol>
 
     <GuidSymbol name="guidRemoveTrailingSpacesAndSaveDocumentCommandImages" value="{218806c3-7075-4634-ac1c-d25bbe496975}">
@@ -155,6 +164,15 @@
     </GuidSymbol>
 
     <GuidSymbol name="guidStartOfWordCommandImages" value="{4c72cca8-9a56-4d8c-9bb8-b614f10a9d75}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidStartOfWordExtendCommandImages" value="{00e143d9-83a5-41ec-b65c-c4389151b42e}">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />
