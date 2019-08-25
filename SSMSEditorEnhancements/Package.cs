@@ -60,6 +60,7 @@ namespace SSMSEditorEnhancements {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await Commands.RemoveTrailingSpacesAndSaveDocument.RemoveTrailingSpacesAndSaveDocumentCommand.InitializeAsync(this);
             await Commands.ReplaceSquareBracketsWithDoubleQuotes.ReplaceSquareBracketsWithDoubleQuotesCommand.InitializeAsync(this);
+            await Commands.Navigation.EndOfWord.EndOfWordCommand.InitializeAsync(this);
         }
 
         #endregion
