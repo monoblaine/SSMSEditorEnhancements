@@ -56,6 +56,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\Navigation\EndOfWordExtend\EndOfWordExtendCommand.cs" />
     <Compile Include="Commands\Navigation\EndOfWord\EndOfWordCommand.cs" />
     <Compile Include="Commands\ReplaceSquareBracketsWithDoubleQuotes\ReplaceSquareBracketsWithDoubleQuotesCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -202,6 +203,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Commands\Navigation\EndOfWordExtend\Resources\EndOfWordExtendCommand.png" />
     <Content Include="Commands\Navigation\EndOfWord\Resources\EndOfWordCommand.png" />
     <Content Include="Commands\RemoveTrailingSpacesAndSaveDocument\Resources\RemoveTrailingSpacesAndSaveDocumentCommand.png" />
     <Content Include="Commands\ReplaceSquareBracketsWithDoubleQuotes\Resources\ReplaceSquareBracketsWithDoubleQuotesCommand.png" />
