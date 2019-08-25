@@ -59,6 +59,13 @@
           <ButtonText>Invoke RemoveTrailingSpacesAndSaveDocumentCommand</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidPackageCmdSet" id="ReplaceSquareBracketsWithDoubleQuotesCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidReplaceSquareBracketsWithDoubleQuotesCommandImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Invoke ReplaceSquareBracketsWithDoubleQuotesCommand</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -69,6 +76,7 @@
             inside a button definition. An important aspect of this declaration is that the element id
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidRemoveTrailingSpacesAndSaveDocumentCommandImages" href="Commands\RemoveTrailingSpacesAndSaveDocument\Resources\RemoveTrailingSpacesAndSaveDocumentCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidReplaceSquareBracketsWithDoubleQuotesCommandImages" href="Commands\ReplaceSquareBracketsWithDoubleQuotes\Resources\ReplaceSquareBracketsWithDoubleQuotesCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
     </Bitmaps>
   </Commands>
 
@@ -80,9 +88,19 @@
     <GuidSymbol name="guidPackageCmdSet" value="{752d7738-8d2b-44e2-be4c-39239de4facb}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="RemoveTrailingSpacesAndSaveDocumentCommandId" value="0x0100" />
+      <IDSymbol name="ReplaceSquareBracketsWithDoubleQuotesCommandId" value="4129" />
     </GuidSymbol>
 
     <GuidSymbol name="guidRemoveTrailingSpacesAndSaveDocumentCommandImages" value="{218806c3-7075-4634-ac1c-d25bbe496975}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidReplaceSquareBracketsWithDoubleQuotesCommandImages" value="{7f4fc48f-db70-4036-87d8-514e14c1f8ff}">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

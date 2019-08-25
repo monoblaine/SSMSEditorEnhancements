@@ -59,6 +59,7 @@ namespace SSMSEditorEnhancements {
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await Commands.RemoveTrailingSpacesAndSaveDocument.RemoveTrailingSpacesAndSaveDocumentCommand.InitializeAsync(this);
+            await Commands.ReplaceSquareBracketsWithDoubleQuotes.ReplaceSquareBracketsWithDoubleQuotesCommand.InitializeAsync(this);
         }
 
         #endregion
