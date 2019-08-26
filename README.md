@@ -18,7 +18,7 @@ Removes the trailing spaces from the active document, changes the document's enc
 
 ### `ReplaceSquareBracketsWithDoubleQuotes` command
 
-Replaces all `[` and `]` characters inside the active document with `"`. (Personel obsession)
+Replaces all `[` and `]` characters inside the active document with `"`. (Personal obsession)
 
 ### `EndOfWord(Extend)` and `StartOfWord(Extend)` commands
 
