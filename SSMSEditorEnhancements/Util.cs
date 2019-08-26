@@ -1,5 +1,7 @@
 //ş
 using System;
+using System.Runtime.InteropServices;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -37,9 +39,38 @@ namespace SSMSEditorEnhancements {
                 return false;
             }
 
-            textView = VsShellUtilities.GetTextView(windowFrame);
+            windowFrame.GetCodeWindow().Value.GetLastActiveView(out textView);
 
             return true;
+        }
+
+        /// <summary>
+        /// https://github.com/VsVim/VsVim/blob/d7b3e1a79a6d06cdae5e0334e09f9bbf5388e7df/Src/VsVimShared/Extensions.cs#L500
+        /// </summary>
+        /// <param name="vsWindowFrame"></param>
+        /// <returns></returns>
+        public static Result<IVsCodeWindow> GetCodeWindow (this IVsWindowFrame vsWindowFrame) {
+            var iid = typeof(IVsCodeWindow).GUID;
+            var ptr = IntPtr.Zero;
+
+            try {
+                var hr = vsWindowFrame.QueryViewInterface(ref iid, out ptr);
+
+                if (ErrorHandler.Failed(hr)) {
+                    return Result.CreateError(hr);
+                }
+
+                return Result.CreateSuccess((IVsCodeWindow) Marshal.GetObjectForIUnknown(ptr));
+            }
+            catch (Exception e) {
+                // Venus will throw when querying for the code window
+                return Result.CreateError(e);
+            }
+            finally {
+                if (ptr != IntPtr.Zero) {
+                    Marshal.Release(ptr);
+                }
+            }
         }
 
         public static IWpfTextView GetWpfTextView (this IVsTextView vsTextView) {
