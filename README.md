@@ -30,6 +30,7 @@ Some of the code in this project was taken from or inspired by the following rep
 
 * https://github.com/madskristensen/TrailingWhitespace
 * https://github.com/ow--/vs-subword-navigation
+* https://github.com/VsVim/VsVim
 
 ## Installation
 
