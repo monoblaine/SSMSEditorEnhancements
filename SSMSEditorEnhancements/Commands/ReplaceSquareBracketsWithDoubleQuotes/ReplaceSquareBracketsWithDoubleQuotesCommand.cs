@@ -94,14 +94,19 @@ namespace SSMSEditorEnhancements.Commands.ReplaceSquareBracketsWithDoubleQuotes 
                 EnvDTE.vsFindOptions.vsFindOptionsMatchInHiddenText
             );
 
-            dte2.DTE.Find.FindReplace(
-                Action: EnvDTE.vsFindAction.vsFindActionReplaceAll,
-                FindWhat: @"[\[\]]",
-                vsFindOptionsValue: options,
-                ReplaceWith: "\"",
-                Target: EnvDTE.vsFindTarget.vsFindTargetCurrentDocument,
-                ResultsLocation: EnvDTE.vsFindResultsLocation.vsFindResultsNone
-            );
+            void regexReplace (String target, String replacement) {
+                dte2.DTE.Find.FindReplace(
+                    Action: EnvDTE.vsFindAction.vsFindActionReplaceAll,
+                    FindWhat: target,
+                    vsFindOptionsValue: options,
+                    ReplaceWith: replacement,
+                    Target: EnvDTE.vsFindTarget.vsFindTargetCurrentDocument,
+                    ResultsLocation: EnvDTE.vsFindResultsLocation.vsFindResultsNone
+                );
+            }
+
+            regexReplace(@"[\[\]]", "\"");
+            regexReplace(@"(\r\n)+$(?![\r\n])", "\r\n");
         }
     }
 }
