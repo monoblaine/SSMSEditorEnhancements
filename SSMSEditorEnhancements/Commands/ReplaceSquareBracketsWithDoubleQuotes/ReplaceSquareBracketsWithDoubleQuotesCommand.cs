@@ -105,8 +105,17 @@ namespace SSMSEditorEnhancements.Commands.ReplaceSquareBracketsWithDoubleQuotes 
                 );
             }
 
+            void regexReplaceWithLowerCasedString (String str) {
+                regexReplace("^" + str, str.ToLowerInvariant());
+            }
+
             regexReplace(@"[\[\]]", "\"");
             regexReplace(@"(\r\n)+$(?![\r\n])", "\r\n");
+            regexReplaceWithLowerCasedString("ALTER");
+            regexReplaceWithLowerCasedString("CREATE");
+            regexReplaceWithLowerCasedString("DELETE");
+            regexReplaceWithLowerCasedString("INSERT");
+            regexReplaceWithLowerCasedString("SELECT");
         }
     }
 }
