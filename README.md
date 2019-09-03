@@ -16,9 +16,12 @@ I use Visual Studio for front-end/back-end coding and db scripting. SQL Server D
 
 Changes the document's encoding to UTF-8 (without BOM) and saves the document.
 
-### `ReplaceSquareBracketsWithDoubleQuotes` command
+### `BeautifyCode` command
 
-Replaces all `[` and `]` characters inside the active document with `"`. (Personal obsession)
+* Replaces all `[` and `]` characters with `"` (Personal obsession),
+* Removes excessive trailing newline characters from EOF,
+* Converts certain SQL keywords (`ALTER`, `CREATE`, `DELETE`, `INSERT`, `SELECT`) into lowercase (if they are in the beginning of the line)
+* Removes trailing whitespace
 
 ### `EndOfWord(Extend)` and `StartOfWord(Extend)` commands
 

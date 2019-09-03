@@ -59,7 +59,7 @@ namespace SSMSEditorEnhancements {
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await Commands.FixDocumentEncoding.FixDocumentEncodingCommand.InitializeAsync(this);
-            await Commands.ReplaceSquareBracketsWithDoubleQuotes.ReplaceSquareBracketsWithDoubleQuotesCommand.InitializeAsync(this);
+            await Commands.BeautifyCode.BeautifyCodeCommand.InitializeAsync(this);
             await Commands.Navigation.EndOfWord.EndOfWordCommand.InitializeAsync(this);
             await Commands.Navigation.EndOfWordExtend.EndOfWordExtendCommand.InitializeAsync(this);
             await Commands.Navigation.StartOfWord.StartOfWordCommand.InitializeAsync(this);

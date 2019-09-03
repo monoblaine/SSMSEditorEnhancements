@@ -59,11 +59,11 @@
           <ButtonText>Invoke FixDocumentEncodingCommand</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidPackageCmdSet" id="ReplaceSquareBracketsWithDoubleQuotesCommandId" priority="0x0100" type="Button">
+      <Button guid="guidPackageCmdSet" id="BeautifyCodeCommandId" priority="0x0100" type="Button">
         <Parent guid="guidPackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidReplaceSquareBracketsWithDoubleQuotesCommandImages" id="bmpPic1" />
+        <Icon guid="guidBeautifyCodeCommandImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Invoke ReplaceSquareBracketsWithDoubleQuotesCommand</ButtonText>
+          <ButtonText>Invoke BeautifyCodeCommand</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidPackageCmdSet" id="EndOfWordCommandId" priority="0x0100" type="Button">
@@ -104,7 +104,7 @@
             inside a button definition. An important aspect of this declaration is that the element id
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidFixDocumentEncodingCommandImages" href="Commands\FixDocumentEncoding\Resources\FixDocumentEncodingCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
-      <Bitmap guid="guidReplaceSquareBracketsWithDoubleQuotesCommandImages" href="Commands\ReplaceSquareBracketsWithDoubleQuotes\Resources\ReplaceSquareBracketsWithDoubleQuotesCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidBeautifyCodeCommandImages" href="Commands\BeautifyCode\Resources\BeautifyCodeCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidEndOfWordCommandImages" href="Commands\Navigation\EndOfWord\Resources\EndOfWordCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidEndOfWordExtendCommandImages" href="Commands\Navigation\EndOfWordExtend\Resources\EndOfWordExtendCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidStartOfWordCommandImages" href="Commands\Navigation\StartOfWord\Resources\StartOfWordCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
@@ -120,7 +120,7 @@
     <GuidSymbol name="guidPackageCmdSet" value="{752d7738-8d2b-44e2-be4c-39239de4facb}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="FixDocumentEncodingCommandId" value="0x0100" />
-      <IDSymbol name="ReplaceSquareBracketsWithDoubleQuotesCommandId" value="4129" />
+      <IDSymbol name="BeautifyCodeCommandId" value="4129" />
       <IDSymbol name="EndOfWordCommandId" value="4130" />
       <IDSymbol name="EndOfWordExtendCommandId" value="4131" />
       <IDSymbol name="StartOfWordCommandId" value="4132" />
@@ -136,7 +136,7 @@
       <IDSymbol name="bmpPicStrikethrough" value="6" />
     </GuidSymbol>
 
-    <GuidSymbol name="guidReplaceSquareBracketsWithDoubleQuotesCommandImages" value="{7f4fc48f-db70-4036-87d8-514e14c1f8ff}">
+    <GuidSymbol name="guidBeautifyCodeCommandImages" value="{7f4fc48f-db70-4036-87d8-514e14c1f8ff}">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />
