@@ -12,9 +12,9 @@ I use Visual Studio for front-end/back-end coding and db scripting. SQL Server D
 
 ## Commands
 
-### `RemoveTrailingSpacesAndSaveDocument` command
+### `FixDocumentEncoding` command
 
-Removes the trailing spaces from the active document, changes the document's encoding to UTF-8 (without BOM) and saves the document.
+Changes the document's encoding to UTF-8 (without BOM) and saves the document.
 
 ### `ReplaceSquareBracketsWithDoubleQuotes` command
 

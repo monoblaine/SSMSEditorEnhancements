@@ -52,11 +52,11 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidPackageCmdSet" id="RemoveTrailingSpacesAndSaveDocumentCommandId" priority="0x0100" type="Button">
+      <Button guid="guidPackageCmdSet" id="FixDocumentEncodingCommandId" priority="0x0100" type="Button">
         <Parent guid="guidPackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidRemoveTrailingSpacesAndSaveDocumentCommandImages" id="bmpPic1" />
+        <Icon guid="guidFixDocumentEncodingCommandImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Invoke RemoveTrailingSpacesAndSaveDocumentCommand</ButtonText>
+          <ButtonText>Invoke FixDocumentEncodingCommand</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidPackageCmdSet" id="ReplaceSquareBracketsWithDoubleQuotesCommandId" priority="0x0100" type="Button">
@@ -103,7 +103,7 @@
             bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
             inside a button definition. An important aspect of this declaration is that the element id
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
-      <Bitmap guid="guidRemoveTrailingSpacesAndSaveDocumentCommandImages" href="Commands\RemoveTrailingSpacesAndSaveDocument\Resources\RemoveTrailingSpacesAndSaveDocumentCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidFixDocumentEncodingCommandImages" href="Commands\FixDocumentEncoding\Resources\FixDocumentEncodingCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidReplaceSquareBracketsWithDoubleQuotesCommandImages" href="Commands\ReplaceSquareBracketsWithDoubleQuotes\Resources\ReplaceSquareBracketsWithDoubleQuotesCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidEndOfWordCommandImages" href="Commands\Navigation\EndOfWord\Resources\EndOfWordCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidEndOfWordExtendCommandImages" href="Commands\Navigation\EndOfWordExtend\Resources\EndOfWordExtendCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
@@ -119,7 +119,7 @@
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidPackageCmdSet" value="{752d7738-8d2b-44e2-be4c-39239de4facb}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
-      <IDSymbol name="RemoveTrailingSpacesAndSaveDocumentCommandId" value="0x0100" />
+      <IDSymbol name="FixDocumentEncodingCommandId" value="0x0100" />
       <IDSymbol name="ReplaceSquareBracketsWithDoubleQuotesCommandId" value="4129" />
       <IDSymbol name="EndOfWordCommandId" value="4130" />
       <IDSymbol name="EndOfWordExtendCommandId" value="4131" />
@@ -127,7 +127,7 @@
       <IDSymbol name="StartOfWordExtendCommandId" value="4133" />
     </GuidSymbol>
 
-    <GuidSymbol name="guidRemoveTrailingSpacesAndSaveDocumentCommandImages" value="{218806c3-7075-4634-ac1c-d25bbe496975}">
+    <GuidSymbol name="guidFixDocumentEncodingCommandImages" value="{218806c3-7075-4634-ac1c-d25bbe496975}">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

@@ -6,11 +6,11 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text;
 using Task = System.Threading.Tasks.Task;
 
-namespace SSMSEditorEnhancements.Commands.RemoveTrailingSpacesAndSaveDocument {
+namespace SSMSEditorEnhancements.Commands.FixDocumentEncoding {
     /// <summary>
     /// Command handler
     /// </summary>
-    internal sealed class RemoveTrailingSpacesAndSaveDocumentCommand {
+    internal sealed class FixDocumentEncodingCommand {
         private static readonly UTF8Encoding _utf8WithoutBom = new UTF8Encoding(false);
 
         /// <summary>
@@ -29,12 +29,12 @@ namespace SSMSEditorEnhancements.Commands.RemoveTrailingSpacesAndSaveDocument {
         private readonly AsyncPackage package;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveTrailingSpacesAndSaveDocumentCommand"/> class.
+        /// Initializes a new instance of the <see cref="FixDocumentEncodingCommand"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
         /// <param name="commandService">Command service to add command to, not null.</param>
-        private RemoveTrailingSpacesAndSaveDocumentCommand (AsyncPackage package, OleMenuCommandService commandService) {
+        private FixDocumentEncodingCommand (AsyncPackage package, OleMenuCommandService commandService) {
             this.package = package ?? throw new ArgumentNullException(nameof(package));
 
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
@@ -48,7 +48,7 @@ namespace SSMSEditorEnhancements.Commands.RemoveTrailingSpacesAndSaveDocument {
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static RemoveTrailingSpacesAndSaveDocumentCommand Instance { get; private set; }
+        public static FixDocumentEncodingCommand Instance { get; private set; }
 
         /// <summary>
         /// Gets the service provider from the owner package.
@@ -60,13 +60,13 @@ namespace SSMSEditorEnhancements.Commands.RemoveTrailingSpacesAndSaveDocument {
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
         public static async Task InitializeAsync (AsyncPackage package) {
-            // Switch to the main thread - the call to AddCommand in RemoveTrailingSpacesAndSaveDocumentCommand's constructor requires
+            // Switch to the main thread - the call to AddCommand in FixDocumentEncodingCommand's constructor requires
             // the UI thread.
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
             var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
 
-            Instance = new RemoveTrailingSpacesAndSaveDocumentCommand(package, commandService);
+            Instance = new FixDocumentEncodingCommand(package, commandService);
         }
 
         /// <summary>

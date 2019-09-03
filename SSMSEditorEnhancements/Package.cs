@@ -31,7 +31,7 @@ namespace SSMSEditorEnhancements {
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
     public sealed class Package : AsyncPackage {
         /// <summary>
-        /// RemoveTrailingSpacesAndSaveDocumentCommandPackage GUID string.
+        /// FixDocumentEncodingCommandPackage GUID string.
         /// </summary>
         public const String PackageGuidString = "8b065e17-48ac-4e66-b7be-0b942c50fe54";
 
@@ -58,7 +58,7 @@ namespace SSMSEditorEnhancements {
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            await Commands.RemoveTrailingSpacesAndSaveDocument.RemoveTrailingSpacesAndSaveDocumentCommand.InitializeAsync(this);
+            await Commands.FixDocumentEncoding.FixDocumentEncodingCommand.InitializeAsync(this);
             await Commands.ReplaceSquareBracketsWithDoubleQuotes.ReplaceSquareBracketsWithDoubleQuotesCommand.InitializeAsync(this);
             await Commands.Navigation.EndOfWord.EndOfWordCommand.InitializeAsync(this);
             await Commands.Navigation.EndOfWordExtend.EndOfWordExtendCommand.InitializeAsync(this);
