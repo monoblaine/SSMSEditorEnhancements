@@ -85,34 +85,14 @@ namespace SSMSEditorEnhancements.Commands.RemoveTrailingSpacesAndSaveDocument {
                 return;
             }
 
-            var wpfTextView = textView.GetWpfTextView();
-
-            RemoveTrailingWhitespace(wpfTextView.TextBuffer);
-
-            var textDocument = wpfTextView.TextBuffer.Properties.GetProperty<ITextDocument>(typeof(ITextDocument));
-
-            textDocument.Encoding = new UTF8Encoding(false);
+            textView
+                .GetWpfTextView()
+                .TextBuffer
+                .Properties
+                .GetProperty<ITextDocument>(typeof(ITextDocument))
+                .Encoding = new UTF8Encoding(false);
 
             dte2.ActiveDocument.Save();
-        }
-
-        private static void RemoveTrailingWhitespace (ITextBuffer buffer) {
-            using (var edit = buffer.CreateEdit()) {
-                foreach (var line in edit.Snapshot.Lines) {
-                    var text = line.GetText();
-                    var length = text.Length;
-
-                    while (--length >= 0 && Char.IsWhiteSpace(text[length]));
-
-                    if (length < text.Length - 1) {
-                        var start = line.Start.Position;
-
-                        edit.Delete(start + length + 1, text.Length - length - 1);
-                    }
-                }
-
-                edit.Apply();
-            }
         }
     }
 }

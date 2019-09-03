@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.Design;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Text;
 using Task = System.Threading.Tasks.Task;
 
 namespace SSMSEditorEnhancements.Commands.ReplaceSquareBracketsWithDoubleQuotes {
@@ -116,6 +117,31 @@ namespace SSMSEditorEnhancements.Commands.ReplaceSquareBracketsWithDoubleQuotes 
             regexReplaceWithLowerCasedString("DELETE");
             regexReplaceWithLowerCasedString("INSERT");
             regexReplaceWithLowerCasedString("SELECT");
+
+            if (!dte2.TryGetTextView(out var textView)) {
+                return;
+            }
+
+            RemoveTrailingWhitespace(textView.GetWpfTextView().TextBuffer);
+        }
+
+        private static void RemoveTrailingWhitespace (ITextBuffer buffer) {
+            using (var edit = buffer.CreateEdit()) {
+                foreach (var line in edit.Snapshot.Lines) {
+                    var text = line.GetText();
+                    var length = text.Length;
+
+                    while (--length >= 0 && Char.IsWhiteSpace(text[length]));
+
+                    if (length < text.Length - 1) {
+                        var start = line.Start.Position;
+
+                        edit.Delete(start + length + 1, text.Length - length - 1);
+                    }
+                }
+
+                edit.Apply();
+            }
         }
     }
 }
