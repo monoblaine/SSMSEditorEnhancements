@@ -112,6 +112,7 @@ namespace SSMSEditorEnhancements.Commands.BeautifyCode {
 
             regexReplace(@"[\[\]]", "\"");
             regexReplace(@"(\r\n)+$(?![\r\n])", "\r\n");
+            regexReplace(@"(.)$(?![\r\n])", "$1\r\n"); // Add EOF newline if missing
             regexReplaceWithLowerCasedString("ALTER");
             regexReplaceWithLowerCasedString("CREATE");
             regexReplaceWithLowerCasedString("DELETE");
