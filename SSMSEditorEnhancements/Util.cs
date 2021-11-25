@@ -135,6 +135,15 @@ namespace SSMSEditorEnhancements {
             var navigator = dte2.GetTextStructureNavigatorSelector().GetTextStructureNavigator(wpfTextView.TextBuffer);
             var extent = navigator.GetExtentOfWord(point);
 
+            if (!extent.IsSignificant) {
+                for (int i = 0; i < extent.Span.Length; i++) {
+                    operations.MoveToNextCharacter(extendSelection);
+                }
+
+                EndOfWord(dte2, extendSelection);
+                return;
+            }
+
             for (Int32 i = point; i < extent.Span.End && i < caret.ContainingTextViewLine.End; i++) {
                 operations.MoveToNextCharacter(extendSelection);
             }
