@@ -110,6 +110,8 @@ namespace SSMSEditorEnhancements.Commands.BeautifyCode {
                 regexReplace("^" + str, str.ToLowerInvariant());
             }
 
+            regexReplace(@"\[.+?\]\.\[dbo\]\.", "[dbo].");
+            regexReplace(@"SELECT TOP \(\d+\) ", "select ");
             regexReplace(@"[\[\]]", "\"");
             regexReplace(@"(\r\n)+$(?![\r\n])", "\r\n");
             regexReplace(@"(.)$(?![\r\n])", "$1\r\n"); // Add EOF newline if missing
