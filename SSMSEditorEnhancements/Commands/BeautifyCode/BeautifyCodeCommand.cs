@@ -110,6 +110,10 @@ namespace SSMSEditorEnhancements.Commands.BeautifyCode {
                 regexReplace("^" + str, str.ToLowerInvariant());
             }
 
+            void regexReplaceWithLowerCasedString2 (String str) {
+                regexReplace("^" + str + "$", str.ToLowerInvariant());
+            }
+
             regexReplace(@"\[.+?\]\.\[dbo\]\.", "[dbo].");
             regexReplace(@"SELECT TOP \(\d+\) ", "select ");
             regexReplace(@"[\[\]]", "\"");
@@ -120,6 +124,7 @@ namespace SSMSEditorEnhancements.Commands.BeautifyCode {
             regexReplaceWithLowerCasedString("DELETE");
             regexReplaceWithLowerCasedString("INSERT");
             regexReplaceWithLowerCasedString("SELECT");
+            regexReplaceWithLowerCasedString("GO");
 
             if (!dte2.TryGetTextView(out var textView)) {
                 return;
