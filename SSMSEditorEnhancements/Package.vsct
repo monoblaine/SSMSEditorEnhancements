@@ -66,6 +66,13 @@
           <ButtonText>Invoke BeautifyCodeCommand</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidPackageCmdSet" id="ReplaceAllSquareBracketsWithDoubleQuotesCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidReplaceAllSquareBracketsWithDoubleQuotesCommandImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Invoke ReplaceAllSquareBracketsWithDoubleQuotesCommand</ButtonText>
+        </Strings>
+      </Button>
       <Button guid="guidPackageCmdSet" id="EndOfWordCommandId" priority="0x0100" type="Button">
         <Parent guid="guidPackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidEndOfWordCommandImages" id="bmpPic1" />
@@ -105,6 +112,7 @@
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidFixDocumentEncodingCommandImages" href="Commands\FixDocumentEncoding\Resources\FixDocumentEncodingCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidBeautifyCodeCommandImages" href="Commands\BeautifyCode\Resources\BeautifyCodeCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidReplaceAllSquareBracketsWithDoubleQuotesCommandImages" href="Commands\ReplaceAllSquareBracketsWithDoubleQuotes\Resources\ReplaceAllSquareBracketsWithDoubleQuotesCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidEndOfWordCommandImages" href="Commands\Navigation\EndOfWord\Resources\EndOfWordCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidEndOfWordExtendCommandImages" href="Commands\Navigation\EndOfWordExtend\Resources\EndOfWordExtendCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidStartOfWordCommandImages" href="Commands\Navigation\StartOfWord\Resources\StartOfWordCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
@@ -121,6 +129,7 @@
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="FixDocumentEncodingCommandId" value="0x0100" />
       <IDSymbol name="BeautifyCodeCommandId" value="4129" />
+      <IDSymbol name="ReplaceAllSquareBracketsWithDoubleQuotesCommandId" value="4134" />
       <IDSymbol name="EndOfWordCommandId" value="4130" />
       <IDSymbol name="EndOfWordExtendCommandId" value="4131" />
       <IDSymbol name="StartOfWordCommandId" value="4132" />
@@ -137,6 +146,15 @@
     </GuidSymbol>
 
     <GuidSymbol name="guidBeautifyCodeCommandImages" value="{7f4fc48f-db70-4036-87d8-514e14c1f8ff}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidReplaceAllSquareBracketsWithDoubleQuotesCommandImages" value="{02483650-bb3b-4c3f-b849-2d7456575834}">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

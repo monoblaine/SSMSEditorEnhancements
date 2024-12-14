@@ -56,6 +56,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\ReplaceAllSquareBracketsWithDoubleQuotes\ReplaceAllSquareBracketsWithDoubleQuotesCommand.cs" />
     <Compile Include="Commands\Navigation\EndOfWordExtend\EndOfWordExtendCommand.cs" />
     <Compile Include="Commands\Navigation\EndOfWord\EndOfWordCommand.cs" />
     <Compile Include="Commands\Navigation\StartOfWordExtend\StartOfWordExtendCommand.cs" />
@@ -206,6 +207,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Commands\ReplaceAllSquareBracketsWithDoubleQuotes\Resources\ReplaceAllSquareBracketsWithDoubleQuotesCommand.png" />
     <Content Include="Commands\Navigation\EndOfWordExtend\Resources\EndOfWordExtendCommand.png" />
     <Content Include="Commands\Navigation\EndOfWord\Resources\EndOfWordCommand.png" />
     <Content Include="Commands\Navigation\StartOfWordExtend\Resources\StartOfWordExtendCommand.png" />
